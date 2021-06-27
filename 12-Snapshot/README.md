@@ -2,11 +2,15 @@
 
 Les sauvegardes peuvent être effectuées à partir de scripts shell.
 
-Voici un exemple de script simple :
+## Ajout d'un script de sauvegarde
+
+* Créer et éditer le fichier suivant :
 
 ```shell
 sudo nano /usr/local/bin/backup.sh
 ```
+
+* Ajouter le script ci-dessous au fichier :
 
 ```bash
 #!/bin/bash
@@ -44,19 +48,21 @@ date
 ls -lh $dest
 ```
 
-Pour exécuter le script, celui-ci doit être exécutable :
+* Sauvegarder & quitter le fichier
+
+* Donner les droits d'exécution au script :
 
 ```shell
-chmod u+x backup.sh
+chmod u+x /usr/local/bin/backup.sh
 ```
 
-Le script se lance de la façon suivante :
+* Lancer le script :
 
 ```shell
-sudo ./backup.sh
+sudo ./usr/local/bin/backup.sh
 ```
 
-L'exécution du script peut être automatisée avec l'utilitaire `cron` :
+## Automatisation de l'exécution du script avec l'utilitaire `cron`
 
 * Modifier le fichier de configuration de `cron` :
 
