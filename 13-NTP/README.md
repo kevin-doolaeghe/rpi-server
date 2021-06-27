@@ -95,7 +95,9 @@ sudo systemctl status chronyd
 sudo nano /etc/chrony/chrony.conf
 ```
 
-2. Modifier la configuration comme indiqué ci-après :
+2. Supprimer les pools existants
+
+3. Ajouter les serveurs de temps ci-dessous à la place :
 
 ```shell
 server 0.fr.pool.ntp.org iburst
@@ -104,7 +106,9 @@ server 2.fr.pool.ntp.org iburst
 server 3.fr.pool.ntp.org iburst
 ```
 
-3. Redémarrer le service `chrony`
+4. Sauvegarder et quitter le fichier de configuration
+
+5. Redémarrer le service `chrony`
 
 ```shell
 sudo service chrony restart
