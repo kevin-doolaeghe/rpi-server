@@ -64,7 +64,7 @@ sudo /usr/local/bin/backup.sh
 
 ## Automatisation de l'exécution du script
 
-### Utilitaire de planification des tâches `cron`/`crontab`
+### Utilitaire de planification des tâches `cron`
 
 * Installation de l'utilitaire :
 
