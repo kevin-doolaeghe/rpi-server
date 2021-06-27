@@ -99,6 +99,9 @@ Depuis un client Windows, il suffit d'ajouter un emplacement réseau à l'adress
 \\<nom_serveur>\<dossier_de_partage>
 ```
 
-Pour la configuration précédente, le dossier de partage peut par exemple être `share`.
+Pour la configuration précédente, le dossier de partage peut être :
+- `public`
+- `private`
+- `<utilisateur>`
 
 Il faut ensuite entrer les identifiants créés avec Samba pour l'utilisateur concerné.
