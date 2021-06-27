@@ -68,7 +68,7 @@ sudo nano /etc/samba/smb.conf
 [public]
   comment = Public Share
   path = /home/share
-  read only = no
+  read only = yes
   guest only = yes
   guest ok = yes
 
