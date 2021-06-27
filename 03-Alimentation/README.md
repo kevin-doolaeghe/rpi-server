@@ -31,6 +31,6 @@ sudo shutdown -r now
 ## Effectuer une pause système
 
 ```shell
-sleep <duree><unite>
+sleep [duree][unite]
 sleep 1s
 ```
