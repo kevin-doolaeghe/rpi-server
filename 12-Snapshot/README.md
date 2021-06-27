@@ -62,12 +62,42 @@ sudo chmod u+x /usr/local/bin/backup.sh
 sudo /usr/local/bin/backup.sh
 ```
 
-## Automatisation de l'exécution du script avec l'utilitaire `cron`
+## Automatisation de l'exécution du script
 
-* Modifier le fichier de configuration de `cron` :
+### Utilitaire de planification des tâches `cron`/`crontab`
+
+* Installation de l'utilitaire :
+
+```
+sudo apt install cron
+```
+
+* Afficher le contenu du fichier `crontab` :
+
+```
+crontab -l
+```
+
+* Supprimer toutes les action du fichier `crontab` :
+
+```
+crontab -r
+```
+
+* Editer les actions du fichier `crontab` :
+
+```
+crontab -e
+```
+
+* Le fichier de configuration de `cron` est `/etc/crontab`.
+
+### Automatiser l'appel du script de sauvegarde avec `cron`
+
+* Ajouter une action au fichier `crontab` :
 
 ```shell
-sudo nano /etc/crontab
+sudo crontab -e
 ```
 
 * Ajouter une entrée au fichier pour planifier l'exécution du script :
@@ -75,10 +105,4 @@ sudo nano /etc/crontab
 ```shell
 # m h dom mon dow   command
 0 0 * * * bash /usr/local/bin/backup.sh
-```
-
-* Exécuter le script avec `cron` :
-
-```shell
-sudo crontab -e
 ```
