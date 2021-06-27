@@ -66,13 +66,13 @@ sudo cat /etc/services
 
 * Créer un fichier `setup_firewall.sh` :
 
-```
+```shell
 sudo nano /usr/local/bin/setup_firewall.sh
 ```
 
 * Ajouter le contenu suivant au fichier :
 
-```
+```shell
 #!/bin/bash
 
 #SSH
