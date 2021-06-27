@@ -57,7 +57,7 @@ sudo /etc/init.d/ntp restart
 ntpq -p
 ```
 
-## Installer `chrony
+## Installer `chrony`
 
 ```shell
 sudo apt install chrony
