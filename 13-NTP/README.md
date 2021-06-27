@@ -45,7 +45,9 @@ server 3.fr.pool.ntp.org iburst
 restict 192.168.1.0 mask 255.255.255.0 nomodify notrap
 ```
 
-5. Redémarrer le service `ntp` :
+5. Sauvegarde et quitter le fichier de configuration
+
+6. Redémarrer le service `ntp` :
 
 ```shell
 sudo /etc/init.d/ntp restart
