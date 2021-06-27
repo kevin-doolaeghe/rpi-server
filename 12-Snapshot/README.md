@@ -4,13 +4,13 @@ Les sauvegardes peuvent être effectuées à partir de scripts shell.
 
 ## Ajout d'un script de sauvegarde
 
-* Créer et éditer le fichier suivant :
+1. Créer et éditer le fichier suivant :
 
 ```shell
 sudo nano /usr/local/bin/backup.sh
 ```
 
-* Ajouter le script ci-dessous au fichier :
+2. Ajouter le script ci-dessous au fichier :
 
 ```bash
 #!/bin/bash
@@ -48,15 +48,15 @@ date
 ls -lh $dest
 ```
 
-* Sauvegarder & quitter le fichier
+3. Sauvegarder & quitter le fichier
 
-* Donner les droits d'exécution au script :
+4. Donner les droits d'exécution au script :
 
 ```shell
 sudo chmod u+x /usr/local/bin/backup.sh
 ```
 
-* Lancer le script :
+5. Lancer le script :
 
 ```shell
 sudo /usr/local/bin/backup.sh
@@ -94,15 +94,17 @@ crontab -e
 
 ### Automatiser l'appel du script de sauvegarde avec `cron`
 
-* Ajouter une action au fichier `crontab` :
+1. Ajouter une action au fichier `crontab` :
 
 ```shell
 sudo crontab -e
 ```
 
-* Ajouter une entrée au fichier pour planifier l'exécution du script :
+2. Ajouter une entrée au fichier pour planifier l'exécution du script :
 
 ```shell
 # m h dom mon dow   command
 0 0 * * * bash /usr/local/bin/backup.sh
 ```
+
+3. Sauvegarder et quitter le fichier
