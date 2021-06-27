@@ -17,12 +17,6 @@ Ces fichiers sont lus au démarrage d'une session depuis l'introduction du packa
 sudo nano /usr/local/bin/sysinfo.sh
 ```
 
-* Donner les droits d'exécution au script :
-
-```shell
-sudo chmod +x /usr/local/bin/sysinfo.sh
-```
-
 * Ajouter le script ci-dessous au fichier :
 
 ```bash
@@ -54,8 +48,14 @@ echo "$(tput setaf 2)
 $(tput sgr0)"
 ```
 
+* Donner les droits d'exécution au script :
+
+```shell
+sudo chmod +x /usr/local/bin/sysinfo.sh
+```
+
 * Créer le lien symbolique du script vers le répertoire `/etc/update-motd.d` :
 
 ```shell
-sudo ln -s /usr/local/bin/sysinfo /etc/update-motd.d/20-sysinfo
+sudo ln -s /usr/local/bin/sysinfo.sh /etc/update-motd.d/20-sysinfo
 ```
