@@ -32,3 +32,17 @@ Activer SSH à l'aide de la commande `systemctl` :
 sudo systemctl enable ssh
 sudo systemctl start ssh
 ```
+
+## Connexion à distance
+
+Connexion à distance avec SSH :
+
+```
+ssh <user>@<hostname|ip>
+```
+
+Par exemple, pour se connecter au périphérique `rpi_server` avec l'utilisateur `kevin`, il faut entrer :
+
+```
+ssh kevin@rpi_server
+```
