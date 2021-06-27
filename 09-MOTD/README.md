@@ -2,7 +2,7 @@
 
 Le fichier `/etc/motd` contient le message de base à la connexion d'un utilisateur.
 
-* Supprimer le contenu du fichier `/etc/motd` :
+1. Supprimer le contenu du fichier `/etc/motd` :
 
 ```shell
 cat /dev/null > /etc/motd
@@ -11,13 +11,13 @@ cat /dev/null > /etc/motd
 Le répertoire `/etc/update-motd.d` contient les fichiers MOTD ou leur lien symbolique.  
 Ces fichiers sont lus au démarrage d'une session depuis l'introduction du package `update-motd`.
 
-* Créer le fichier `sysinfo.sh` :
+2. Créer le fichier `sysinfo.sh` :
 
 ```shell
 sudo nano /usr/local/bin/sysinfo.sh
 ```
 
-* Ajouter le script ci-dessous au fichier :
+3. Ajouter le script ci-dessous au fichier :
 
 ```bash
 #!/bin/sh
@@ -48,13 +48,13 @@ echo "$(tput setaf 2)
 $(tput sgr0)"
 ```
 
-* Donner les droits d'exécution au script :
+4. Donner les droits d'exécution au script :
 
 ```shell
 sudo chmod +x /usr/local/bin/sysinfo.sh
 ```
 
-* Créer le lien symbolique du script vers le répertoire `/etc/update-motd.d` :
+5. Créer le lien symbolique du script vers le répertoire `/etc/update-motd.d` :
 
 ```shell
 sudo ln -s /usr/local/bin/sysinfo.sh /etc/update-motd.d/20-sysinfo
