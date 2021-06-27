@@ -122,5 +122,5 @@ sudo chmod +x setup_firewall.sh
 * Lancer le script :
 
 ```shell
-./setup_firewall.sh
+sudo ./setup_firewall.sh
 ```
