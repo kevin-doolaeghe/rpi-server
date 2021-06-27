@@ -1,6 +1,6 @@
 # Samba - Partage de fichiers
 
-1. Installer `samba` :
+1. Installer le paquet `samba` :
 
 ```shell
 sudo apt install samba
@@ -25,13 +25,19 @@ sudo smbpasswd -a <username>
 sudo smbpasswd -x <username>
 ```
 
-5. Editer le fichier de configuration de `samba` :
+5. Créer une sauvegarde de la configuration de Samba :
+
+```shell
+sudo cp /etc/samba/smb.conf /etc/samba/smb.conf.bak
+```
+
+6. Editer le fichier de configuration de Samba :
 
 ```shell
 sudo nano /etc/samba/smb.conf
 ```
 
-6. Modifier les espaces de déclaration de partage :
+7. Modifier les espaces de déclaration de partage :
 
 ```shell
 [global]
@@ -71,13 +77,13 @@ sudo nano /etc/samba/smb.conf
   read only = no
 ```
 
-7. Redémarrer le service:
+8. Redémarrer le service:
 
 ```shell
 sudo service smbd restart
 ```
 
-8. Autoriser `samba` sur le pare-feu:
+9. Autoriser `samba` sur le pare-feu:
 
 ```shell
 sudo ufw allow samba
