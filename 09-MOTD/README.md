@@ -17,6 +17,12 @@ Ces fichiers sont lus au démarrage d'une session depuis l'introduction du packa
 sudo nano /usr/local/bin/sysinfo.sh
 ```
 
+* Donner les droits d'exécution au script :
+
+```shell
+sudo chmod +x /usr/local/bin/sysinfo.sh
+```
+
 * Ajouter le script ci-dessous au fichier :
 
 ```bash
