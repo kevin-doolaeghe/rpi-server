@@ -1,3 +1,5 @@
+#!/bin/bash
+
 #SSH
 ufw allow out 22/tcp
 ufw allow in 22/tcp
