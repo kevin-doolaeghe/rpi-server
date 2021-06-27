@@ -15,13 +15,13 @@ sudo mkdir /home/share
 sudo chmod 777 /home/share
 ```
 
-3. Ajouter un utilisateur:
+3. Ajouter un utilisateur (ou modifier son mot de passe) :
 
 ```shell
 sudo smbpasswd -a <username>
 ```
 
-4. Changer le mot de passe d'un utilisateur:
+4. Supprimer un utilisateur :
 
 ```shell
 sudo smbpasswd -x <username>
