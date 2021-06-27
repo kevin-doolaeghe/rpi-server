@@ -64,13 +64,13 @@ sudo cat /etc/services
 
 ## Script de configuration de UFW :
 
-* Créer un fichier `setup_firewall.sh` :
+1. Créer un fichier `setup_firewall.sh` :
 
 ```shell
 sudo nano /usr/local/bin/setup_firewall.sh
 ```
 
-* Ajouter le contenu suivant au fichier :
+2. Ajouter le contenu suivant au fichier :
 
 ```shell
 #!/bin/bash
@@ -111,15 +111,15 @@ ufw disable && ufw enable
 ufw logging on
 ```
 
-* Sauvegarder & quitter le fichier
+3. Sauvegarder & quitter le fichier
 
-* Donner les droits d'exécution au script :
+4. Donner les droits d'exécution au script :
 
 ```shell
 sudo chmod +x /usr/local/bin/setup_firewall.sh
 ```
 
-* Lancer le script :
+5. Lancer le script :
 
 ```shell
 sudo /usr/local/bin/setup_firewall.sh
