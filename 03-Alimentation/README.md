@@ -27,3 +27,10 @@ sudo reboot
 ```shell
 sudo shutdown -r now
 ```
+
+## Effectuer une pause système
+
+```shell
+sleep <duree><unite>
+sleep 1s
+```
