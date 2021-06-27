@@ -1,0 +1,95 @@
+### OPENCLASSROOMS
+
+https://openclassrooms.com/fr/courses/2356316-montez-un-serveur-de-fichiers-sous-linux
+https://openclassrooms.com/fr/courses/1733551-gerez-votre-serveur-linux-et-ses-services
+
+
+### Installation/Mise à niveau :
+https://guide.ubuntu-fr.org/server/installation.html
+
+
+### CLAVIER
+https://doc.ubuntu-fr.org/tutoriel/configurer_le_clavier
+
+
+### Gestion des paquets
+https://guide.ubuntu-fr.org/server/package-management.html
+
+
+### RESEAU
+https://limen-arcanum.fr/2016/03/raspberry-3-et-ip-fixe-en-wifi/
+https://linuxhint.com/ubuntu_20-04_network_configuration/
+https://guide.ubuntu-fr.org/server/network-configuration.html
+
+
+### SNAPSHOT
+https://guide.ubuntu-fr.org/server/backup-shellscripts.html
+
+
+### MOTD
+https://guide.ubuntu-fr.org/server/pam_motd.html
+
+
+### CHRONY
+https://www.it-connect.fr/ntp-la-synchronisation-temporelle-avec-chrony/
+https://guide.ubuntu-fr.org/server/NTP.html
+
+
+### LDAP
+https://www.commentcamarche.net/contents/525-le-protocole-ldap
+https://guide.ubuntu-fr.org/server/network-authentication.html
+https://guide.ubuntu-fr.org/server/samba-ldap.html
+https://guide.ubuntu-fr.org/server/openldap-server.html
+
+
+### SAMBA
+https://help.ubuntu.com/community/Samba/SambaServerGuide
+https://help.ubuntu.com/community/Samba/SecuringSamba
+https://guide.ubuntu-fr.org/server/samba.html
+
+
+### apache2/SSL
+https://guide.ubuntu-fr.org/server/httpd.html#https-configuration
+
+
+### Tomcat
+https://guide.ubuntu-fr.org/server/tomcat.html
+
+
+### MySQL
+https://guide.ubuntu-fr.org/server/mysql.html
+
+
+### PHP
+https://guide.ubuntu-fr.org/server/php.html
+
+
+### PHPMyAdmin :
+https://guide.ubuntu-fr.org/server/phpmyadmin.html
+
+
+### Wordpress
+https://guide.ubuntu-fr.org/server/wordpress.html
+
+
+### Wiki
+https://guide.ubuntu-fr.org/server/moinmoin.html
+
+
+### Sécurité
+https://guide.ubuntu-fr.org/server/security.html
+http://doc.ubuntu-fr.org/fail2ban
+
+
+### DNS
+https://guide.ubuntu-fr.org/server/dns.html
+https://guide.ubuntu-fr.org/server/dns-configuration.html
+
+
+### OpenVPN
+https://guide.ubuntu-fr.org/server/openvpn.html
+https://www.digitalocean.com/community/tutorials/how-to-set-up-and-configure-an-openvpn-server-on-ubuntu-20-04-fr
+
+
+### OpenSSH
+https://guide.ubuntu-fr.org/server/openssh-server.html
