@@ -28,7 +28,7 @@ sudo smbpasswd -x <username>
 5. Créer une sauvegarde de la configuration de Samba :
 
 ```shell
-sudo cp /etc/samba/smb.conf /etc/samba/smb.conf.bak
+sudo mv /etc/samba/smb.conf /etc/samba/smb.conf.bak
 ```
 
 6. Editer le fichier de configuration de Samba :
