@@ -10,7 +10,7 @@ sudo apt install samba
 
 ```shell
 sudo mkdir /home/share
-chmod 777 /home/share
+sudo chmod 777 /home/share
 ```
 
 3. Ajouter un utilisateur:
