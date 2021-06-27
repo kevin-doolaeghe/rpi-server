@@ -1,5 +1,7 @@
 # Samba - Partage de fichiers
 
+## Créer le serveur de partage de fichiers
+
 1. Installer le paquet `samba` :
 
 ```shell
@@ -88,3 +90,15 @@ sudo service smbd restart
 ```shell
 sudo ufw allow samba
 ```
+
+## Connexion au serveur de fichiers
+
+Depuis un client Windows, il suffit d'ajouter un emplacement réseau à l'adresse suivante :
+
+```shell
+\\<nom_serveur>\<dossier_de_partage>
+```
+
+Pour la configuration précédente, le dossier de partage peut par exemple être `share`.
+
+Il faut ensuite entrer les identifiants créés avec Samba pour l'utilisateur concerné.
