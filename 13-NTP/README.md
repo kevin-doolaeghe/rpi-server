@@ -1,11 +1,5 @@
 # NTP - Synchronisation du temps
 
-## Installer le package `ntp` :
-
-```shell
-sudo apt install ntp
-```
-
 ## Visualiser la date et l'heure :
 
 * Méthode n°1 :
@@ -20,7 +14,15 @@ timedatectl status
 date
 ```
 
-## Configurer le package `ntp` :
+## Synchroniser la date et l'heure du serveur
+
+### Installer le package `ntp` :
+
+```shell
+sudo apt install ntp
+```
+
+### Configurer le package `ntp` :
 
 1. Editer le fichier `/etc/ntp.conf` :
 
@@ -53,37 +55,39 @@ restict 192.168.1.0 mask 255.255.255.0 nomodify notrap
 sudo /etc/init.d/ntp restart
 ```
 
-## Lister les serveurs `ntp` associés:
+### Lister les serveurs `ntp` associés:
 
 ```shell
 ntpq -p
 ```
 
-## Installer `chrony`
+## Créer le serveur de temps pour un réseau local
+
+### Installer `chrony`
 
 ```shell
 sudo apt install chrony
 ```
 
-## Démarrer `chrony`
+### Démarrer `chrony`
 
 ```shell
 sudo systemctl start chronyd
 ```
 
-## Activer le démarrage automatique de `chrony`
+### Activer le démarrage automatique de `chrony`
 
 ```shell
 sudo systemctl enable chronyd
 ```
 
-## Vérifier l'état du service `chrony`
+### Vérifier l'état du service `chrony`
 
 ```shell
 sudo systemctl status chronyd
 ```
 
-## Configurer `chrony`
+### Configurer `chrony`
 
 1. Editer le fichier `/etc/chrony/chrony.conf` :
 
@@ -106,13 +110,13 @@ server 3.fr.pool.ntp.org iburst
 sudo service chrony restart
 ```
 
-## Vérifier la synchronisation de `chrony`
+### Vérifier la synchronisation de `chrony`
 
 ```shell
 sudo chronyc tracking
 ```
 
-## Afficher les serveurs sources de `chrony`
+### Afficher les serveurs sources de `chrony`
 
 ```shell
 sudo chronyc sources
