@@ -53,13 +53,13 @@ ls -lh $dest
 * Donner les droits d'exécution au script :
 
 ```shell
-chmod u+x /usr/local/bin/backup.sh
+sudo chmod u+x /usr/local/bin/backup.sh
 ```
 
 * Lancer le script :
 
 ```shell
-sudo ./usr/local/bin/backup.sh
+sudo /usr/local/bin/backup.sh
 ```
 
 ## Automatisation de l'exécution du script avec l'utilitaire `cron`
