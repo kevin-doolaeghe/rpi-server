@@ -4,8 +4,8 @@
 
 Pour se connecter au premier démarrage de Raspberry Pi OS, il faut entrer les identifiants suivants :
 
-Utilisateur: `pi`  
-Mot de passe: `raspberry`
+Utilisateur  : `pi`  
+Mot de passe : `raspberry`
 
 ## Modifier le mot de passe
 
