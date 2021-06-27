@@ -8,13 +8,13 @@ sudo apt install net-tools
 
 ## Afficher la configuration IP
 
-* Méthode n°1 :
+### - Méthode n°1 :
 
 ```shell
 ip -a
 ```
 
-* Méthode n°2 :
+### - Méthode n°2 :
 
 ```shell
 ifconfig
@@ -22,19 +22,19 @@ ifconfig
 
 ## Gérer le service réseau
 
-### * Méthode n°1 :
+### - Méthode n°1 :
 
 ```shell
 sudo /etc/init.d/networking.service <start|restart|stop|status|...>
 ```
 
-### * Méthode n°2 :
+### - Méthode n°2 :
 
 ```shell
 sudo systemctl <start|restart|stop|status|...> networking
 ```
 
-### * Méthode n°3 :
+### - Méthode n°3 :
 
 ```shell
 sudo service networking <start|restart|stop|status|...>
@@ -42,7 +42,7 @@ sudo service networking <start|restart|stop|status|...>
 
 ## Configuration IP
 
-### * Méthode n°1 :
+### - Méthode n°1 :
 
 1. Editer le fichier de configuration suivant :
 
@@ -67,7 +67,7 @@ static domain_name_servers=192.168.1.254
 sudo service networking restart
 ```
 
-### * Méthode n°2 : (Vielles versions)
+### - Méthode n°2 : (Vielles versions)
 
 1. Editer le fichier de configuration suivant :
 
@@ -92,13 +92,15 @@ iface eth0 inet static
 sudo service networking restart
 ```
 
-### * Méthode n°3 : (Sous Ubuntu 17.10+)
+### - Méthode n°3 : (Sous Ubuntu 17.10+)
 
 1. Editer le fichier de configuration `YAML` suivant :
 
 ```shell
 sudo nano /etc/netplan/*.yaml
 ```
+
+2. Ajouter la configuration adéquate
 
 ```shell
 network:
@@ -114,19 +116,19 @@ network:
                 addresses: [192.168.1.254, 8.8.8.8]
 ```
 
-2. Générer la configuration :
+3. Générer la configuration :
 
 ```shell
 netplan generate
 ```
 
-3. Appliquer la configuration réseau :
+4. Appliquer la configuration réseau :
 
 ```shell
 netplan apply
 ```
 
-### * Méthode n°4 : (Via la commande IP)
+### - Méthode n°4 : (Via la commande IP)
 
 ```shell
 ip addr <add|del> <address> dev <inteface>
