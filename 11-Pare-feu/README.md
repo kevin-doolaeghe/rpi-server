@@ -116,7 +116,7 @@ ufw logging on
 * Donner les droits d'exécution au script :
 
 ```shell
-chmod +x setup_firewall.sh
+sudo chmod +x setup_firewall.sh
 ```
 
 * Lancer le script :
