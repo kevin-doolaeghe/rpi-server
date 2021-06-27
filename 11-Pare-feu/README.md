@@ -67,7 +67,7 @@ sudo cat /etc/services
 * Créer un fichier `setup_firewall.sh` :
 
 ```
-sudo nano setup_firewall.sh
+sudo nano /usr/local/bin/setup_firewall.sh
 ```
 
 * Ajouter le contenu suivant au fichier :
@@ -116,11 +116,11 @@ ufw logging on
 * Donner les droits d'exécution au script :
 
 ```shell
-sudo chmod +x setup_firewall.sh
+sudo chmod +x /usr/local/bin/setup_firewall.sh
 ```
 
 * Lancer le script :
 
 ```shell
-sudo ./setup_firewall.sh
+sudo /usr/local/bin/setup_firewall.sh
 ```
