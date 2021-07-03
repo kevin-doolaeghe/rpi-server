@@ -44,6 +44,7 @@ sudo nano /etc/samba/smb.conf
 ```
 [global]
   workgroup = WORKGROUP
+  server string = %h server
   interfaces = wlan0
   bind interfaces only = yes
   log file = /var/log/samba/log.%m
@@ -51,11 +52,15 @@ sudo nano /etc/samba/smb.conf
   logging = file
   server role = standalone server
   obey pam restrictions = yes
+  passwd program = /usr/bin/passwd %u
+  passwd chat = *Enter\snew\s*\spassword:* %n\n *Retype\snew\s*\spassword:* %n\n *password\supdated\ssuccessfully* .
+  pam password change = yes
   unix password sync = yes
   security = user
   encrypt passwords = true
   map to guest = bad user
   guest account = nobody
+  server signing = mandatory
   create mask = 0644
   directory mask = 0755
 
@@ -77,6 +82,8 @@ sudo nano /etc/samba/smb.conf
   path = /home/share
   browsable = no
   read only = no
+  guest ok = no
+  valid users = kevin
 ```
 
 8. Redémarrer le service:
