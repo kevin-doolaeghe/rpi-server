@@ -4,44 +4,44 @@
 
 1. Installer le paquet `samba` :
 
-```shell
+```
 sudo apt install samba
 ```
 
 2. Créer le répertoire de partage :
 
-```shell
+```
 sudo mkdir /home/share
 sudo chmod 777 /home/share
 ```
 
 3. Ajouter un utilisateur (ou modifier son mot de passe) :
 
-```shell
+```
 sudo smbpasswd -a <username>
 ```
 
 4. Supprimer un utilisateur :
 
-```shell
+```
 sudo smbpasswd -x <username>
 ```
 
 5. Créer une sauvegarde de la configuration de Samba :
 
-```shell
+```
 sudo mv /etc/samba/smb.conf /etc/samba/smb.conf.bak
 ```
 
 6. Editer le fichier de configuration de Samba :
 
-```shell
+```
 sudo nano /etc/samba/smb.conf
 ```
 
 7. Modifier les espaces de déclaration de partage :
 
-```shell
+```
 [global]
   workgroup = WORKGROUP
   interfaces = wlan0
