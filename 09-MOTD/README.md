@@ -4,7 +4,7 @@ Le fichier `/etc/motd` contient le message de base à la connexion d'un utilisat
 
 1. Supprimer le contenu du fichier `/etc/motd` :
 
-```shell
+```
 cat /dev/null > /etc/motd
 ```
 
@@ -13,7 +13,7 @@ Ces fichiers sont lus au démarrage d'une session depuis l'introduction du packa
 
 2. Créer le fichier `sysinfo.sh` :
 
-```shell
+```
 sudo nano /usr/local/bin/sysinfo.sh
 ```
 
@@ -50,12 +50,12 @@ $(tput sgr0)"
 
 4. Donner les droits d'exécution au script :
 
-```shell
+```
 sudo chmod +x /usr/local/bin/sysinfo.sh
 ```
 
 5. Créer le lien symbolique du script vers le répertoire `/etc/update-motd.d` :
 
-```shell
+```
 sudo ln -s /usr/local/bin/sysinfo.sh /etc/update-motd.d/20-sysinfo
 ```
