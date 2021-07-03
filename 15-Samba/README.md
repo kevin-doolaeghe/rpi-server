@@ -119,5 +119,5 @@ Pour la configuration précédente, le dossier de partage peut être `public`, `
 * Se connecter au serveur de fichiers à l'aide de la commande suivante :
 
 ```
-smbclient '\\<hostname|adresse_ip>\<partage>' [mot_de_passee]
+smbclient '\\<hostname|adresse_ip>\<partage>' -U <utilisateur>%<mot_de_passe>
 ```
