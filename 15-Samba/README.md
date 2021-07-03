@@ -99,7 +99,7 @@ sudo ufw allow samba
 
 * Ajouter un emplacement réseau à l'adresse suivante :
 
-```shell
+```
 \\<hostname|ip>\<share>
 ```
 
@@ -116,6 +116,6 @@ Il faut ensuite entrer les identifiants créés avec Samba pour l'utilisateur co
 
 * Se connecter au serveur de fichiers à l'aide de la commande suivante :
 
-```shell
+```
 smbclient '\\<hostname|ip>\<share>' [pass]
 ```
