@@ -95,8 +95,7 @@ sudo ufw allow samba
 
 ### Windows :
 
-* Ouvrir 
-
+* Ouvrir l'explorateur de fichiers Windows
 * Ajouter un emplacement réseau à l'adresse suivante :
 
 ```
@@ -113,7 +112,6 @@ Il faut ensuite entrer les identifiants créés avec Samba pour l'utilisateur co
 ### Linux :
 
 * Installer le paquet `smbclient`
-
 * Se connecter au serveur de fichiers à l'aide de la commande suivante :
 
 ```
