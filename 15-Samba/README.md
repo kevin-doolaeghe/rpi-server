@@ -100,7 +100,7 @@ sudo ufw allow samba
 * Ajouter un emplacement réseau à l'adresse suivante :
 
 ```
-\\<hostname|ip>\<share>
+\\<hostname|adresse_ip>\<partage>
 ```
 
 Pour la configuration précédente, le dossier de partage peut être :
@@ -117,5 +117,5 @@ Il faut ensuite entrer les identifiants créés avec Samba pour l'utilisateur co
 * Se connecter au serveur de fichiers à l'aide de la commande suivante :
 
 ```
-smbclient '\\<hostname|ip>\<share>' [pass]
+smbclient '\\<hostname|adresse_ip>\<partage>' [mot_de_passee]
 ```
