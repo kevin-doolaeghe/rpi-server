@@ -102,12 +102,9 @@ sudo ufw allow samba
 \\<hostname|adresse_ip>\<partage>
 ```
 
-Pour la configuration précédente, le dossier de partage peut être :
-- `public`
-- `private`
-- `<utilisateur>`
+Pour la configuration précédente, le dossier de partage peut être `public`, `private` ou `<utilisateur>`.
 
-Il faut ensuite entrer les identifiants créés avec Samba pour l'utilisateur concerné.
+* Entrer les identifiants de l'utilisateur Samba
 
 ### Linux :
 
