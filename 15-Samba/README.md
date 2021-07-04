@@ -1,6 +1,6 @@
 # Samba - Partage de fichiers
 
-## Créer le serveur de partage de fichiers
+## Configurer le serveur de partage de fichiers
 
 1. Installer le paquet `samba` :
 
