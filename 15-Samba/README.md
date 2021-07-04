@@ -56,6 +56,7 @@ sudo nano /etc/samba/smb.conf
   passwd chat = *Enter\snew\s*\spassword:* %n\n *Retype\snew\s*\spassword:* %n\n *password\supdated\ssuccessfully* .
   pam password change = yes
   unix password sync = yes
+  ntlm auth = true
   security = user
   encrypt passwords = true
   map to guest = bad user
@@ -88,13 +89,13 @@ sudo nano /etc/samba/smb.conf
 
 8. Redémarrer le service:
 
-```shell
+```
 sudo service smbd restart
 ```
 
 9. Autoriser Samba sur le pare-feu:
 
-```shell
+```
 sudo ufw allow samba
 ```
 
