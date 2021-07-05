@@ -41,6 +41,105 @@ L'arborescence DIT de `slapd-config` est la suivante :
 /etc/ldap/slapd.d/cn=config/cn=schema.ldif
 ```
 
+3. Ajouter un fichier `add_content.ldif` :
+
+```
+sudo nano add_content.ldif
+```
+
+4. Ajouter le contenu suivant au fichier :
+
+```
+dn: ou=People,dc=example,dc=com
+objectClass: organizationalUnit
+ou: People
+
+dn: ou=Groups,dc=example,dc=com
+objectClass: organizationalUnit
+ou: Groups
+
+dn: cn=administrators,ou=Groups,dc=example,dc=com
+objectClass: posixGroup
+cn: administrators
+gidNumber: 5000
+
+dn: uid=kevin,ou=People,dc=example,dc=com
+objectClass: inetOrgPerson
+objectClass: posixAccount
+objectClass: shadowAccount
+uid: kevin
+sn: Doolaeghe
+givenName: Kevin
+cn: Kevin Doolaeghe
+displayName: Kevin Doolaeghe
+uidNumber: 10000
+gidNumber: 5000
+userPassword: kevinldap
+gecos: Kevin Doolaeghe
+loginShell: /bin/bash
+homeDirectory: /home/kevin
+```
+
+5. Ajouter le contenu au serveur LDAP :
+
+```
+ldapadd -x -D cn=admin,dc=example,dc=com -W -f add_content.ldif
+```
+
+Vérifier que l'utilisateur a bien été créé dans la base de données LDAP :
+
+```
+ldapsearch -x -LLL -b dc=example,dc=com 'uid=kevin' cn gidNumber
+```
+
+## Gestion des entrées LDAP
+
+1. Installer le paquet `ldapscripts` :
+
+```
+sudo apt install ldapscripts
+```
+
+2. Editer le fichier `/etc/ldapscripts/ldapscripts.conf` :
+
+```
+sudo nano /etc/ldapscripts/ldapscripts.conf
+```
+
+3. Remplacer le contenu du fichier par le suivant :
+
+```
+SERVER=localhost
+BINDDN='cn=admin,dc=example,dc=com'
+BINDPWDFILE="/etc/ldapscripts/ldapscripts.passwd"
+SUFFIX='dc=example,dc=com'
+GSUFFIX='ou=Groups'
+USUFFIX='ou=People'
+MSUFFIX='ou=Computers'
+GIDSTART=10000
+UIDSTART=10000
+MIDSTART=10000
+```
+
+4. Créer le fichier `ldapscripts.passwd` pour permettre l'accès de `root` au répertoire :
+
+```
+sudo sh -c "echo -n 'secret' > /etc/ldapscripts/ldapscripts.passwd"
+sudo chmod 400 /etc/ldapscripts/ldapscripts.passwd
+```
+
+5. Ajouter un utilisateur :
+
+```
+sudo ldapadduser <utilisateur> <groupe>
+```
+
+6. Modifier le mot de passe de l'utilisateur :
+
+```
+sudo ldapsetpasswd <utilisateur>
+```
+
 ## Configurer LDAP pour fonctionner avec Samba
 
 1. Installer les paquets nécessaires :
@@ -136,4 +235,88 @@ sudo smbldap-populate -g 10000 -u 10000 -r 10000
 
 ```
 sudo smbpasswd -W
+```
+
+12. Installer `libnss-ldap` :
+
+```
+sudo apt install libnss-ldap
+```
+
+13. Configurer le profile LDAP pour NSS :
+
+```
+sudo auth-client-config -t nss -p lac_ldap
+```
+
+14. Redémarrer le service Samba :
+
+```
+sudo systemctl restart smbd.service nmbd.service
+```
+
+Vérifier la configuration Samba :
+
+```
+getent group
+```
+
+```
+...
+Account Operators:*:548:
+Print Operators:*:550:
+Backup Operators:*:551:
+Replicators:*:552:
+```
+
+## Gestion des utilisateurs LDAP pour Samba
+
+* Ajout d'un utilisateur LDAP existant pour Samba :
+
+```
+sudo smbpasswd -a identifiant
+```
+
+* Supprimer un utilisateur LDAP pour Samba :
+
+```
+sudo smbldap-userdel identifiant
+```
+
+* Ajouter un groupe :
+
+```
+sudo smbldap-groupadd -a nom_de_groupe
+```
+
+* Attribuer un groupe à un utilisateur existant :
+
+```
+sudo smbldap-groupmod -m identifiant nom_de_groupe
+```
+
+* Supprimer un utilisateur d'un groupe :
+
+```
+sudo smbldap-groupmod -x identifiant nom_de_groupe
+```
+
+* Ajouter un compte machine :
+
+```
+sudo smbldap-useradd -t 0 -w nom_machine
+```
+
+## Ajout d'un nouvel utilisateur LDAP pour Samba
+
+* Ajouter l'utilisateur `kevin` :
+
+```
+sudo smbldap-useradd -a -P -m kevin
+```
+
+* Changer le mot de passe :
+
+```
+getent passwd kevin
 ```
