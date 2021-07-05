@@ -1,4 +1,0 @@
-LDAP:
-
-Paquet à installer:
-	sudo apt install samba smbldap-tools
