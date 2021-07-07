@@ -1,29 +1,29 @@
 # Docker
 
-## Installation :
+## Installation de Docker :
 
-```shell
+```
 sudo apt install docker.io
 ```
 
 ## Gestion des images Docker
 
-### Créer une image à l'aide de d'un fichier `Dockerfile`
+### Construction d'une image à partir d'un fichier Dockerfile
 
-Les fichiers `Dockerfile` décrivent toutes les commandes afin d'automatiser la construction d'une image Docker.
+Les fichiers **Dockerfile** décrivent toutes les commandes afin d'automatiser la construction d'une image Docker.
 
-Par exemple, le fichier `Dockerfile` suivant permet de lancer le script `app.js` de la machine hôte sur le container :
+Par exemple, le fichier **Dockerfile** suivant permet de lancer le script `app.js` de la machine hôte sur le conteneur :
 
-```shell
+```
 FROM node:alpine
 COPY . /app
 WORKDIR /app
 CMD node app.js
 ```
 
-Construire l'image :
+Construire une image à partir d'un fichier Dockerfile :
 
-```shell
+```
 sudo docker build -t [image] [chemin]
 ```
 
@@ -31,79 +31,81 @@ sudo docker build -t [image] [chemin]
 
 De nombreuses images Docker sont disponibles sur le site [Docker Hub](https://hub.docker.com/search?q=&type=image).
 
+Télécharger une image issue de Docker Hub :
+
+```
+sudo docker pull [auteur]/[conteneur]
+```
+
 ### Afficher la liste des images sur la machine hôte :
 
-```shell
+```
 sudo docker images
 ```
 
 ### Supprimer une image :
 
-```shell
+```
 sudo docker rmi [image]
 ```
 
-## Gestion des containers
+## Gestion des conteneurs
 
-### Afficher l'état des containers :
+### Créer et démarrer un conteneur :
 
-* Afficher les containers démarrés :
-
-```shell
-sudo docker ps
+```
+sudo docker run --name [conteneur] -d [image]
 ```
 
-* Afficher tous les containers :
+Il est possible de spécifier des paramètres de démarrage du conteneur :
 
-```shell
-sudo docker ps -a
 ```
-
-### Télécharger un container existant :
-
-```shell
-sudo docker pull [auteur]/[container]
-```
-
-### Créer et démarrer un container :
-
-```shell
-sudo docker run --name [container] -d [image]
-```
-
-```shell
-sudo docker run --name [container] \
+sudo docker run --name [conteneur] \
     -v [dossier]:[cible] \
     -p [port]:[cible] \
     -d [image]
 ```
 
-### Supprimer un container :
+### Supprimer un conteneur :
 
-```shell
-sudo docker rm [container]
+```
+sudo docker rm [conteneur]
 ```
 
-### Démarrer un container :
+### Démarrer un conteneur :
 
-```shell
-sudo docker start [container]
+```
+sudo docker start [conteneur]
 ```
 
-### Arrêter un container :
+### Arrêter un conteneur :
 
-```shell
-sudo docker stop [container]
+```
+sudo docker stop [conteneur]
 ```
 
-### Entrer dans un container et intéragir avec lui :
+### Entrer dans un conteneur et intéragir avec lui :
 
-```shell
-sudo docker exec -it [container] [bash|sh]
+```
+sudo docker exec -it [conteneur] [bash|sh]
 ```
 
-### Copier des fichiers dans un container :
+### Copier des fichiers dans un conteneur :
 
-```shell
-sudo docker cp [src] [container]:[dst]
+```
+sudo docker cp [src] [conteneur]:[dst]
+```
+
+### Afficher l'état des conteneurs :
+
+* Afficher l'état des conteneurs démarrés :
+
+```
+sudo docker ps
+```
+
+* Afficher l'état de tous les conteneurs :
+
+```
+sudo docker ps -a
 ```
