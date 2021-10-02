@@ -2,6 +2,12 @@
 
 ## Partitionner
 
+L'utilitaire `fdisk` (ou `resize2fs` si il ne s'agit pas d'une partition GPT) permet de créer, supprimer, redimensionner une partition.
+
+Un exemple de redimensionnement de partition via l'outil `fdisk` est disponible à [cette adresse](https://access.redhat.com/articles/1190213).
+
+## Formater
+
 ```shell
 sudo mkfs -t ext4 /dev/sda1
 ```
