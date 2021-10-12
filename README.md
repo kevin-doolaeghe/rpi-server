@@ -17,3 +17,8 @@ Créer un serveur à partir d'une carte Raspberry Pi disposant des fonctionnalit
 - Protection par Firewall
 - Serveur VPN
 - Création de backup
+
+## Sources
+
+* [Guide du serveur Ubuntu](https://guide.ubuntu-fr.org/server/)
+* [Serveur Linux - OpenClassroom](https://openclassrooms.com/fr/courses/1733551-gerez-votre-serveur-linux-et-ses-services/5236056-securisez-votre-serveur-web)
