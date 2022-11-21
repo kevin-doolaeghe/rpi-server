@@ -168,6 +168,12 @@ rfkill list all
 sudo rfkill unblock all
 ```
 
+5. Activer manuellement la configuration de `wpa_supplicant` :
+```
+sudo killall wpa_supplicant
+sudo wpa_supplicant -c/etc/wpa_supplicant/wpa_supplicant.conf -iwlan0
+```
+
 ## Configuration DNS
 
 1. Editer le fichier suivant :
