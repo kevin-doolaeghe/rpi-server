@@ -78,7 +78,7 @@ sudo apt install cron
 crontab -l
 ```
 
-* Supprimer toutes les action du fichier `crontab` :
+* Supprimer toutes les actions du fichier `crontab` :
 
 ```
 crontab -r
