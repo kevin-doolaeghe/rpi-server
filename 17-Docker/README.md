@@ -31,6 +31,25 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin 
 sudo docker --version
 ```
 
+## Installation de `docker-compose` :
+
+**Lien du tutoriel** : [https://www.digitalocean.com/community/tutorials/how-to-install-docker-compose-on-debian-10](https://www.digitalocean.com/community/tutorials/how-to-install-docker-compose-on-debian-10)
+
+1. Télécharger le paquet officiel :
+```
+sudo curl -L https://github.com/docker/compose/releases/download/v2.22.0/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
+```
+
+2. Rendre exécutable le paquet `docker-compose` :
+```
+sudo chmod +x /usr/local/bin/docker-compose
+```
+
+3. Vérification de l'installation :
+```
+docker-compose --version
+```
+
 ## Gestion des images Docker
 
 ### Construction d'une image à partir d'un fichier Dockerfile
