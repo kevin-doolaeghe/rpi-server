@@ -67,7 +67,7 @@ static domain_name_servers=192.168.1.254
 sudo service networking restart
 ```
 
-### Méthode n°2 : (Vielles versions)
+### Méthode n°2 : (via le service `networking`, anciennes versions)
 
 1. Editer le fichier de configuration suivant :
 
@@ -92,7 +92,7 @@ iface eth0 inet static
 sudo service networking restart
 ```
 
-### Méthode n°3 : (Sous Ubuntu 17.10+)
+### Méthode n°3 : (via `netplan`, à partir de Ubuntu 17.10+)
 
 1. Editer le fichier de configuration `YAML` suivant :
 
@@ -128,10 +128,35 @@ netplan generate
 netplan apply
 ```
 
-### Méthode n°4 : (Via la commande IP)
+### Méthode n°4 : (via la commande `ip`)
 
 ```shell
 ip addr <add|del> <address> dev <inteface>
+```
+
+### Méthode n°5 : (via le service `NetworkManager`)
+
+1. Activer le service `NetworkManager` :
+```shell
+sudo systemctl enable NetworkManager
+```
+
+2. Afficher les adaptateurs réseau :
+```shell
+nmcli connection show
+```
+
+3. Configurer l'adaptateur dont le nom est `Wired connection 1` :
+```shell
+sudo nmcli con modify "Wired connection 1" ipv4.addresses 10.0.0.252/24
+sudo nmcli con modify "Wired connection 1" ipv4.gateway 10.0.0.254
+sudo nmcli con modify "Wired connection 1" ipv4.dns "10.0.0.254 8.8.8.8"
+sudo nmcli con modify "Wired connection 1" ipv4.method manual
+```
+
+4. Appliquer la configuration :
+```shell
+sudo nmcli connection up "Wired connection 1"
 ```
 
 ## Configuration du Wi-Fi
