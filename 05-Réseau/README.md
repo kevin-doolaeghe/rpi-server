@@ -13,6 +13,7 @@ sudo apt install net-tools
 ```shell
 ip -a
 ```
+Note : Utiliser le tuyau `| more` pour afficher les interfaces page par page.
 
 ### Méthode n°2 :
 
